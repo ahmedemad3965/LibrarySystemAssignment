@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "User.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,8 +16,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    QStringList usernames = {"user1", "user2", "user3"};
-    QStringList passwords = {"pass1", "pass2", "pass3"};
+    // make list of users
+    QList<User> users;
 
 private slots:
     void on_signInButton_clicked();
