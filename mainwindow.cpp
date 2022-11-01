@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "booksdialog.h"
 
 #include <QMessageBox>
 #include <QList>
@@ -14,7 +15,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->errorLabel->setVisible(false);
     ui->passwordField->setEchoMode(QLineEdit::Password);
 
-    // make list of users
     User user1("ahmed", "pass1", 1, 100.00, QList<QString>());
     User user2("kiro", "pass2", 1, 200.00, QList<QString>());
     users.append(user1);
@@ -29,16 +29,22 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_signInButton_clicked()
 {
-    // sign in user
+    ui->errorLabel->setVisible(false);
+
     QString username = ui->usernameField->text();
     QString password = ui->passwordField->text();
     
     for (int i = 0; i < users.length(); i++) {
-        // log
         if (users[i].getUsername() == username) {
             if (users[i].getPassword() == password) {
                 ui->IDLabel->setText(QString::number(users[i].getId()));
                 ui->balanceLabel->setText(QString::number(users[i].getBalance()));
+
+                BooksDialog *booksDialog = new BooksDialog(this, &users[i]);
+                booksDialog->setModal(true);
+                booksDialog->exec();
+                return;
+
                 ui->errorLabel->setVisible(false);
                 return;
             } else {
