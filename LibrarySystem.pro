@@ -12,16 +12,19 @@ SOURCES += \
     booksdialog.cpp \
     main.cpp \
     mainwindow.cpp \
-    User.cpp
+    User.cpp \
+    purchaseddialog.cpp
 
 HEADERS += \
     booksdialog.h \
     mainwindow.h \
-    User.h
+    User.h \
+    purchaseddialog.h
 
 FORMS += \
     booksdialog.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    purchaseddialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

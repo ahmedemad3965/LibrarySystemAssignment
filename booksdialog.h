@@ -21,12 +21,18 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_6_clicked();
+
 private:
     Ui::BooksDialog *ui;
     User *user;
     // make list for avaliable books
     QList<QString> books;
+    QList<QString> pur_books;
     QList<double> prices;
+    int ind;
 };
 
 #endif // BOOKSDIALOG_H

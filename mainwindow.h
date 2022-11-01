@@ -15,6 +15,7 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    void change_balan(User *user = nullptr);
     ~MainWindow();
     // make list of users
     QList<User> users;

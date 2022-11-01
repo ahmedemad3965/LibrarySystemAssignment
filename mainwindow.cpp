@@ -43,6 +43,7 @@ void MainWindow::on_signInButton_clicked()
                 BooksDialog *booksDialog = new BooksDialog(this, &users[i]);
                 booksDialog->setModal(true);
                 booksDialog->exec();
+                ui->balanceLabel->setText(QString::number(users[i].getBalance()));
                 return;
 
                 ui->errorLabel->setVisible(false);
