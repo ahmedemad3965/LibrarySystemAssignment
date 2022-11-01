@@ -58,4 +58,3 @@ void MainWindow::on_signInButton_clicked()
     ui->errorLabel->setText("User not found");
     ui->errorLabel->setVisible(true);
 }
-

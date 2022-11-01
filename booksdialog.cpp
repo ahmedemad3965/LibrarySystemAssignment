@@ -39,3 +39,11 @@ void BooksDialog::on_booksCombo_currentIndexChanged(int index)
     }
 }
 
+
+void BooksDialog::on_pushButton_5_clicked()
+{
+    QString new_balance = ui->textEdit->toPlainText();
+    user->setBalance(QString(new_balance).toDouble());
+    ui->balanceLabel->setText(QString::number(user->getBalance()));
+}
+

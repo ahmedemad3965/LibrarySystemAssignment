@@ -19,6 +19,8 @@ public:
 private slots:
     void on_booksCombo_currentIndexChanged(int index);
 
+    void on_pushButton_5_clicked();
+
 private:
     Ui::BooksDialog *ui;
     User *user;
